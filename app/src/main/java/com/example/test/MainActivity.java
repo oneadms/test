@@ -14,9 +14,11 @@ public class MainActivity extends AppCompatActivity {
     void initView() {
         RecyclerView recyclerView = findViewById(R.id.rc);
         recyclerView.setLayoutManager(new GridLayoutManager(this,3,RecyclerView.VERTICAL,false));
-        ArrayList<Object> ls = new ArrayList<>();
+        ArrayList<Item> ls = new ArrayList<>();
 
-        ls.add(1);ls.add(1);ls.add(1);ls.add(1);ls.add(1);ls.add(1);ls.add(1);
+        for (int i = 0; i < 10; i++) {
+            ls.add(new Item(R.drawable.ic_launcher_background, "test"+i));
+        }
         recyclerView.setAdapter( new MyAdapter(this,ls));
 
     }
